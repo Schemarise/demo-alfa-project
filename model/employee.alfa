@@ -1,0 +1,34 @@
+namespace acme.model
+
+# Employee entity keyed by a uuid based on Person
+entity Employee key(id:uuid) includes Person {
+    # Official job title
+    JobTitle : string 
+    
+    # Annual salary
+    Salary : double 
+    
+    # Skillset and a competence level between 1 and 10
+    SkillsetLevels : map< string, int(1,10) >
+
+    # Calculated commission based on the salary level
+    Commission : double = CommissionLib::calcComm(Salary) 
+}
+
+# Testcase for asserting Employee related behaviours
+testcase EmployeeTest {
+    # Test the skill level settings are in expected range
+    testSkillLevel(sc : alfa.test.Scenario ) : void {
+        sc::fails("Skill level 12 invalid", () => {
+        let emp = partial Employee( SkillsetLevels = {"MSExcel" : 12} )
+        })   
+    } 
+   
+    # Test the commission levels are calcuated correctly
+    testCommisions(sc : alfa.test.Scenario ) : void {
+        let emp40k = partial Employee( Salary = 40000 )
+        let emp80k = partial Employee( Salary = 80000 )
+        sc::assertTrue("3% commission",() => emp40k.Commission == 0.03 )
+        sc::assertTrue("5% commission",() => emp80k.Commission == 0.05 )
+    } 
+} 

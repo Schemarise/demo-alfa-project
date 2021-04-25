@@ -1,0 +1,80 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.schemarise.alfa.samples</groupId>
+    <artifactId>alfa-sample-basic</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <parent>
+        <groupId>com.schemarise.alfa.samples</groupId>
+        <artifactId>alfa-java-samples</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>io.alfa-lang.utils</groupId>
+                <artifactId>alfa-maven-plugin</artifactId>
+                <version>0.9.0-RC1</version>
+                <executions>
+                    <execution>
+                        <id>alfa-exec</id>
+                        <goals>
+                            <goal>compile</goal>
+                            <goal>package</goal>
+                        </goals>
+                        <configuration>
+                            <!-- path to ALFA models /-->
+                            <srcPath>${basedir}/../../../model</srcPath>
+                            <exportSettings>
+                                <!-- generate java /-->
+                                <exportSetting>
+                                    <exportType>java</exportType>
+                                </exportSetting>
+                                <!-- generate java tests /-->
+                                <exportSetting>
+                                    <exportType>javatest</exportType>
+                                </exportSetting>
+                            </exportSettings>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>1.7</version>
+                <executions>
+                    <execution>
+                        <id>add-java-gen-source</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>add-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>${project.build.directory}/generated-sources/java</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>add-javatest-gen-source</id>
+                        <phase>generate-test-sources</phase>
+                        <goals>
+                            <goal>add-test-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>${project.build.directory}/generated-test-sources/java</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+    </build>
+
+</project>
