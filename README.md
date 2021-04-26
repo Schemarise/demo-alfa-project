@@ -47,4 +47,4 @@ these are conbined in sub-directories within this project.
 2. [Python samples](projects/python/README.md) - Coming soon
 
 
-For any questions, please email `info@alfa-lang.io`.
+For any questions, please email `info@schemarise.com`.
