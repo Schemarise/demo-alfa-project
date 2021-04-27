@@ -18,8 +18,6 @@ This project can be used directly from the browser using github/gitpod integrati
 
 <a href="https://gitpod.io/#https://github.com/alfa-demo/alfa-sample-project" target="_blank"><img src="https://gitpod.io/button/open-in-gitpod.svg"/></a>
 
-[Hello, world!](http://example.com/){target="_blank"}
-
 # Quick Tour
 
 ## ALFA Model files
