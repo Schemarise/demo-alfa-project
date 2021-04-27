@@ -14,9 +14,8 @@ there are few sample Java and Python projects showing how the models can be used
 
 This project can be used directly from the browser using github/gitpod integration with ALFA toolset. You can login to gitpod using your github/bitbucket/gitlab account.
 
-Click the button below to open the project in your browser.
-
-[![Open ALFA in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/alfa-demo/alfa-sample-project)
+**Click the button below to open the project in your browser.**
+<a href="https://gitpod.io/#https://github.com/alfa-demo/alfa-sample-project" target="_blank"><img src="https://gitpod.io/button/open-in-gitpod.svg"/></a>
 
 
 # Quick Tour
