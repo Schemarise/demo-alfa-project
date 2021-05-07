@@ -21,6 +21,7 @@ testcase EmployeeTest {
     testSkillLevel(sc : alfa.test.Scenario ) : void {
         sc::fails("Skill level 12 invalid", () => {
         let emp = partial Employee( SkillsetLevels = {"MSExcel" : 12} )
+        sc::randomWith(emp)
         })   
     } 
    
