@@ -1,0 +1,20 @@
+namespace acme.model
+
+# Annotation to be used for Personal Identifiable Info against various definitions
+annotation PII (entity, record, trait, field ) {
+    # Sensitivity of the PII
+    Sensitivity : DataSensitivity = DataSensitivity.Low
+
+    # Classification of the PII
+    Classification : DataClassification = DataClassification.InternalOnly
+}
+
+# Types of Sensitivity against PII info
+enum DataSensitivity {
+    High Medium Low
+}
+
+# Types of Classification against PII info
+enum DataClassification {
+    Public InternalOnly Confidential Restricted
+}
