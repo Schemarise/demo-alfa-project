@@ -33,7 +33,8 @@ This project can be used directly from the browser using github/gitpod integrati
 
 ## Model live-documentation
 
-* Right-click on any ALFA file and select `Show Model Documentation` which will open a new Browser with web-based documentation.
+* Right-click on any ALFA file and select `Open ALFA Studio` which will open a new Browser with web-based ALFA Studio Console.
+* Click on `View Documentation`.
 * You can navigate around the documentation UML diagram or links. Documentation from model is incorporated into the HTML page.
 * Changes to the ALFA files are reflected in HTML when the browser page is refreshed.
 
