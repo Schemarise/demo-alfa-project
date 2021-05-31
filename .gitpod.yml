@@ -7,7 +7,7 @@ tasks:
     command: exit
 
   - name: ALFA CLI Setup
-    before: mkdir -p $THEIA_WORKSPACE_ROOT/.alfa && curl -L --http1.1 http://alfa-lang.io/downloads/AlfaCLI-0.9.0-RC1.zip --output $THEIA_WORKSPACE_ROOT/.alfa/AlfaCLI-0.9.0-RC1.zip > /dev/null && cd $THEIA_WORKSPACE_ROOT/.alfa && unzip AlfaCLI-0.9.0-RC1.zip 
+    before: mkdir -p $THEIA_WORKSPACE_ROOT/.alfa && curl -L --http1.1 http://alfa-lang.io/downloads/AlfaCLI-0.9.0-RC1.zip --output $THEIA_WORKSPACE_ROOT/.alfa/AlfaCLI-0.9.0-RC1.zip > /dev/null && cd $THEIA_WORKSPACE_ROOT/.alfa && unzip AlfaCLI-0.9.0-RC1.zip && rm -rf samples
     command: exit
 
   - name: ALFA Python Setup
