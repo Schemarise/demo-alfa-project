@@ -1,8 +1,6 @@
 from alfa.rt.JsonCodec import JsonCodec
 from alfa.rt.AlfaRandomizer import AlfaRandomizer
 
-from alfa.rt.TableCodec import TableCodec
-from alfa.rt.BuilderConfig import BuilderConfig
 from alfa.rt.DFBuilder import DFBuilder
 import pandas as pd
 
