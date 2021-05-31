@@ -15,7 +15,7 @@ randomizer = AlfaRandomizer([])
 
 # Create 5 random Customer objects 
 customers = []
-for i in range(5):
+for i in range(6):
     customers.append( randomizer.random("acme.model.Customer") )
 
 # Convert Generated Alfa objects to a Pandas dataframes
@@ -23,5 +23,6 @@ df = DFBuilder.from_alfa_objects(customers)
 print(df)
 
 gold_cust = df[df.CustType == 'Gold']
+print("--- FILTERED ---")
 print(gold_cust)
 
