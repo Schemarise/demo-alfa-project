@@ -8,6 +8,8 @@ from acme.model.CustomerType import CustomerType
 from acme.model.Customer import Customer
 from acme.model.CustomerKey import CustomerKey
 
+from alfa.rt.DFBuilder import DFBuilder
+
 # Create an Alfa Randomiser class
 randomizer = AlfaRandomizer([])
 
@@ -35,4 +37,9 @@ cb.CustType = CustomerType.Standard
 cb.PassCodeToken = "Secr3t1!"
 
 c = cb.build()
+print("------ Object to JSON ------")
 print( JsonCodec.to_json(c) )
+
+print("------ Object to Python Pandas DataFrame ------")
+df = DFBuilder.from_alfa_object(c)
+print(df)

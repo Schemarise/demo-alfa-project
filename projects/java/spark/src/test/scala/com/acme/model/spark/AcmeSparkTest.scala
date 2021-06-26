@@ -38,6 +38,8 @@ class AcmeSparkTest extends FunSuite {
       .appName("AlfaSparkTest")
       .getOrCreate()
 
+    spark.sparkContext.setLogLevel("WARN")
+
     val rows = new util.ArrayList[Row]()
     
     Range.apply(0, 20).map( _ => {

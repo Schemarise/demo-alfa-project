@@ -42,8 +42,8 @@
     <modules>
         <module>basic</module>
         <module>rest</module>
-        <module>spark</module>
         <module>avro</module>
+        <module>spark</module>
         <!-- <module>jdbc</module>  -->
     </modules>
 
