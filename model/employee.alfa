@@ -15,6 +15,14 @@ entity Employee key(id:uuid) includes Person {
     Commission : double = CommissionLib::calcComm(Salary) 
 }
 
+# Library for commission calculations
+library CommissionLib {
+    # Calculate commission based on given salary
+    calcComm(Salary : double) : double {
+        return if (Salary<50000) 0.03 else 0.05
+    }
+}
+
 # Testcase for asserting Employee related behaviours
 testcase EmployeeTest {
     # Test the skill level settings are in expected range

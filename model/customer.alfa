@@ -4,11 +4,6 @@ namespace acme.model
 entity Customer key(cusId:uuid) includes Person {
     Accounts : list< string(8,8) >      ## List of accounts held
     CustType : CustomerType             ## Type of customer based on annual spend
-    PassCodeToken : string(5,*)         ## Security Token 
-}
-
-service CustomerUISrc {
-    getByType( /# Type to search for#/ t:CustomerType ) : table< Customer > 
 }
 
 # Customer Service API for CRUD and other operations
@@ -26,4 +21,7 @@ service CustomerSvc {
     # Get all customers for given type
     getByType( /# Type to search for#/ t:CustomerType ) : list<Customer> 
 }
-  
+
+service CustomerUISrc {
+    getByType( /# Type to search for#/ t:CustomerType ) : table< Customer > 
+}

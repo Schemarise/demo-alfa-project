@@ -34,7 +34,6 @@ cb.LastName = "Bloggs"
 cb.DateOfBirth = datetime.date(2000, 5, 17)
 cb.Accounts = [ "1123124", "3241232", "2903480" ]
 cb.CustType = CustomerType.Standard
-cb.PassCodeToken = "Secr3t1!"
 
 c = cb.build()
 print("------ Object to JSON ------")
