@@ -1,0 +1,34 @@
+namespace acme.model.dataload
+
+record EmployeeData {
+    Name : string
+    Dob : string
+    JobTitle : string
+    Salary : double
+    Role : string
+}
+
+transform( d : EmployeeData ) : acme.model.Employee {
+    let idx = indexOf(d.Name, " ")
+    let firstName = if ( idx > 0 ) substring(d.Name, 0, idx ) else ""
+    let lastName = substring(d.Name, idx + 1)
+    let k = new acme.model.EmployeeKey(newUUID())
+
+    return new acme.model.Employee(
+        k,
+        firstName,
+        lastName,
+        toDate( d.Dob ),
+        d.JobTitle,
+        50000.00,
+        { d.Role : 5 },
+        0.0 )
+}
+
+testcase EmployeeDataTest {
+    testTransform(sc : alfa.test.Scenario ) : void {
+        let raw = new EmployeeData("Joe Bloggs", "2000-01-01", "VP", 100000.00, "Manager" )
+        let conv = transform< acme.model.Employee >( raw )
+
+        sc::assertTrue("Lastname",() => conv.LastName == "Bloggs" )
+    } }
