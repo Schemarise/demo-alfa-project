@@ -40,6 +40,11 @@ This project can be used directly from the browser using github/gitpod integrati
 
 <img src="images/ide-docs.png" alt="ALFA DOCS" width="800"/>
 
+* Transform definition rendered in HTML showing source to target field paths.
+
+<img src="images/transform.png" alt="ALFA DOCS" width="800"/>
+
+
 ## Code Examples
 
 The `projects` directory includes examples in Java, Scala and Python. Typically model files may reside in a project of their own 
