@@ -17,7 +17,9 @@ transform( d : EmployeeData ) : acme.model.Employee {
     let lName = substring(d.Name, idx + 1)
     let k = new acme.model.EmployeeKey(newUUID())
 
-    return new acme.model.Employee( k, fName, lName, toDate( d.Dob ), d.JobTitle, 50000.00, { d.Role : 5 }, 0.0 )
+    let ranking = if ( matches("[C.O]", d.JobTitle) ) 10 else 5
+ 
+    return new acme.model.Employee( k, fName, lName, toDate( d.Dob ), d.JobTitle, 50000.00, { d.Role : ranking }, 0.0 )
 }
 
 # Test to ensure that EmployeeData can be converted correctly to Employee
