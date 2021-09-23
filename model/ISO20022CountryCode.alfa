@@ -1,0 +1,113 @@
+# ISO 20022 auth.047.001.01 - Financial Instrument Reporting Country Code Report
+namespace acme.FinancialInstrumentReportingCountryCodeReportV01
+
+# Report detailing all countries and their 2 character ISO 3166 code and 
+# SupplementaryData - Additional information that can not be captured in the structured fields and/or any other specific block.
+
+trait CountryData {
+    /# 
+    ISO Element Name	Country
+    ISO Element Definition	Two character country code and country name as per ISO 3166.
+    ISO Type Definition	Specifies a country by its code and its name.
+    #/
+    Country:ElementType
+
+    /# 
+    ISO Element Name	EEA Country
+    ISO Element Definition	Flag which reflects if the country is a member of the EEA (European Economic Area) or not.
+    ISO Type Definition	A flag indicating a True or False value.
+    #/
+    EEACountry: boolean
+
+    /#
+    ISO Element Name	Modification
+    ISO Element Definition	Modification status for the record compared to the previous report.
+    ISO Type Definition	Specifies if an item is added, modified, deleted or unchanged.
+    #/
+    Modification: enum <
+    # No change
+    NOCH,
+
+    # Modification
+    MODI,
+
+    # Deletion
+    DELE,
+
+    # Addition
+    ADDD >
+
+    /#
+    ISO Element Name	Validity Period
+    ISO Element Definition	Details the validity of the specific record.
+    ISO Type Definition	Choice between date and date-time for the specification of a period.
+    #/
+    ValidityPeriod: ValidityPeriodType
+
+    /#
+    ISO Element Name	Last Updated
+    ISO Element Definition	Date when this record was last modified.
+    #/
+    LastUpdated: date
+
+    SupplementaryData: SupplementaryData
+}
+trait SupplementaryData {
+    /#
+    Name	SupplementaryDataRule
+    Definition	This component may not be used without the explicit approval of a SEG and submission to the RA of ISO 20022 compliant structure(s) to be used in the Envelope element.
+    #/
+    SupplementaryData:SupplementaryData1Type
+
+  
+
+
+}
+
+record ElementType {
+    # Specifies a country by its code
+    code: isoCtyCode
+
+    # Specifies a country by its Name
+    Name: string ("^[A-Z]{1,70}$")
+
+
+}
+// ISO 3166
+entity isoCtyCode key ( Alpha_2_code : string("[A-Z]{2,2}") ) {
+    Country_name : string 
+    Official_state_name: string
+    Sovereignty: string
+    //Alpha_2_code: string ("[A-Z]{2,2}")
+    Alpha_3_code: string 
+    Numeric_code: string 
+    Subdivision_code_links: string
+    Internet_ccTLD: string 
+ }
+
+record period2Type{
+    FromDate:datetime
+    ToDate: datetime
+}
+union ValidityPeriodType {
+    # ISO Date
+    Date: date
+
+    # ISO Date
+    FromDate: date
+
+    # ISO date
+    ToDate: date
+
+    # period. From Date To Date.Time span defined by a start date and time, and an end date and time.
+    FromDateToDate:period2Type
+}
+
+record SupplementaryData1Type{
+    # Unambiguous reference to the location where the supplementary data must be inserted in the message instance.
+    PlaceAndName: string (1,350)
+
+    # Technical component that contains the validated supplementary data information. This technical envelope allows to segregate the supplementary data information from any other information.
+    Envelope: string
+
+}
