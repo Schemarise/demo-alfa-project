@@ -6,6 +6,11 @@ tasks:
     before: gp env ALFA_HOME=$HOME/.alfa && curl -L --http1.1 http://alfa-lang.io/downloads/alfa-0.9.0-RC1.vsix --output /tmp/alfa-0.9.0-RC1.vsix > /dev/null && cd /tmp && jar xf alfa-0.9.0-RC1.vsix && mkdir -p /home/gitpod/.gitpod-code/extensions/ && mv extension /home/gitpod/.gitpod-code/extensions/schemarise.alfa-0.9.0-RC1
     command: exit
 
+  - name: ALFA Trial License Setup
+    before: mkdir -p $HOME/.alfa && curl -L --http1.1 https://raw.githubusercontent.com/alfa-demo/alfa-sample-project/main/.alfa/alfa-license.ini --output $HOME/.alfa/alfa-license.ini > /dev/null && 
+    command: exit
+
+
   - name: ALFA CLI Setup
     before: mkdir -p $HOME/.alfa && curl -L --http1.1 http://alfa-lang.io/downloads/AlfaCLI-0.9.0-RC1.zip --output $HOME/.alfa/AlfaCLI-0.9.0-RC1.zip > /dev/null && cd $HOME/.alfa && unzip AlfaCLI-0.9.0-RC1.zip && rm -rf samples
     command: exit
