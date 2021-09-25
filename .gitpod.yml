@@ -7,11 +7,11 @@ tasks:
     command: exit
 
   - name: ALFA CLI Setup
-    before: mkdir -p $HOME/.alfa && curl -L --http1.1 http://alfa-lang.io/downloads/AlfaCLI-0.9.0-RC1.zip --output $HOME/.alfa/AlfaCLI-0.9.0-RC1.zip > /tmp/dl1.log && cd $HOME/.alfa && unzip AlfaCLI-0.9.0-RC1.zip && rm -rf samples
+    before: mkdir -p $HOME/.alfa && curl -L --http1.1 http://alfa-lang.io/downloads/AlfaCLI-0.9.0-RC1.zip --output $HOME/.alfa/AlfaCLI-0.9.0-RC1.zip > /dev/null && cd $HOME/.alfa && unzip AlfaCLI-0.9.0-RC1.zip && rm -rf samples
     command: exit
 
   - name: ALFA Trial License Setup
-    before: mkdir -p $HOME/.alfa && curl -L --http1.1 http://raw.githubusercontent.com/alfa-demo/alfa-sample-project/main/.alfa/alfa-license.ini --output $HOME/.alfa/alfa-license.ini > /tmp/dl2.log 
+    before: mkdir -p $HOME/.alfa && curl -L --http1.1 http://raw.githubusercontent.com/alfa-demo/alfa-sample-project/main/.alfa/alfa-license.ini --output $HOME/.alfa/alfa-license.ini > /dev/null
     command: exit
 
   - name: ALFA Python Setup
