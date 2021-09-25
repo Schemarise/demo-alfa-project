@@ -3,7 +3,7 @@ image:
   
 tasks:
   - name: ALFA IDE Setup
-    before: gp env ALFA_HOME=$THEIA_WORKSPACE_ROOT/.alfa && gp env PATH=$PATH:$ALFA_HOME/bin && curl -L --http1.1 http://alfa-lang.io/downloads/alfa-0.9.0-RC1.vsix --output /tmp/alfa-0.9.0-RC1.vsix > /dev/null && cd /tmp && jar xf alfa-0.9.0-RC1.vsix && mkdir -p /home/gitpod/.gitpod-code/extensions/ && mv extension /home/gitpod/.gitpod-code/extensions/schemarise.alfa-0.9.0-RC1
+    before: gp env ALFA_HOME=$THEIA_WORKSPACE_ROOT/.alfa && curl -L --http1.1 http://alfa-lang.io/downloads/alfa-0.9.0-RC1.vsix --output /tmp/alfa-0.9.0-RC1.vsix > /dev/null && cd /tmp && jar xf alfa-0.9.0-RC1.vsix && mkdir -p /home/gitpod/.gitpod-code/extensions/ && mv extension /home/gitpod/.gitpod-code/extensions/schemarise.alfa-0.9.0-RC1
     command: exit
 
   - name: ALFA CLI Setup
