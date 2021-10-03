@@ -19,7 +19,7 @@ transform( d : EmployeeData ) : acme.model.Employee {
 
     let ranking = if ( matches("[C.O]", d.JobTitle) ) 10 else 5
  
-    return new acme.model.Employee( k, fName, lName, toDate( d.Dob ), d.JobTitle, 50000.00, { d.Role : ranking }, 0.0 )
+    return new acme.model.Employee( k, fName, lName, toDate( d.Dob ), d.JobTitle, 50000.00, { d.Role : ranking } )
 }
 
 # Test to ensure that EmployeeData can be converted correctly to Employee
