@@ -37,6 +37,7 @@ This project can be used directly from the browser using github/gitpod integrati
 * Click on `View Documentation`.
 * You can navigate around the documentation UML diagram or links. Documentation from model is incorporated into the HTML page.
 * Changes to the ALFA files are reflected in HTML when the browser page is refreshed.
+* **View a live ALFA Documentation site** [https://alfa-demo.github.io/position-model-docs/index.html](https://alfa-demo.github.io/position-model-docs/index.html)
 
 <img src="images/ide-docs.png" alt="ALFA DOCS" width="800"/>
 
