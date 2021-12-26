@@ -1,0 +1,36 @@
+{
+  "tableName" : "isoCtyCode",
+  "fields" : [ {
+    "name" : "Alpha_3_code",
+    "type" : "STRING",
+    "mode" : "REQUIRED"
+  }, {
+    "name" : "Sovereignty",
+    "type" : "STRING",
+    "mode" : "REQUIRED"
+  }, {
+    "name" : "Alpha_2_code",
+    "type" : "STRING",
+    "mode" : "REQUIRED"
+  }, {
+    "name" : "Country_name",
+    "type" : "STRING",
+    "mode" : "REQUIRED"
+  }, {
+    "name" : "Internet_ccTLD",
+    "type" : "STRING",
+    "mode" : "REQUIRED"
+  }, {
+    "name" : "Subdivision_code_links",
+    "type" : "STRING",
+    "mode" : "REQUIRED"
+  }, {
+    "name" : "Official_state_name",
+    "type" : "STRING",
+    "mode" : "REQUIRED"
+  }, {
+    "name" : "Numeric_code",
+    "type" : "STRING",
+    "mode" : "REQUIRED"
+  } ]
+}

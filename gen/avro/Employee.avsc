@@ -1,0 +1,56 @@
+{
+  "type" : "record",
+  "name" : "Employee",
+  "namespace" : "acme.model",
+  "fields" : [ {
+    "name" : "LastName",
+    "doc" : "Legal last name",
+    "type" : "string"
+  }, {
+    "name" : "JobTitle",
+    "doc" : "Official job title",
+    "type" : "string"
+  }, {
+    "name" : "Commission",
+    "doc" : "Calculated commission based on the salary level",
+    "type" : "double"
+  }, {
+    "name" : "FirstName",
+    "doc" : "Legal first and middle name",
+    "type" : "string"
+  }, {
+    "name" : "SkillsetLevels",
+    "doc" : "Skillset and a competence level between 1 and 10",
+    "type" : {
+      "type" : "array",
+      "items" : {
+        "type" : "record",
+        "name" : "MapRecord1",
+        "namespace" : "synthetic",
+        "fields" : [ {
+          "name" : "key",
+          "doc" : "Map key",
+          "type" : "string"
+        }, {
+          "name" : "value",
+          "doc" : "Map value",
+          "type" : "int"
+        } ]
+      }
+    }
+  }, {
+    "name" : "id",
+    "type" : "string"
+  }, {
+    "name" : "Salary",
+    "doc" : "Annual salary",
+    "type" : "double"
+  }, {
+    "name" : "DateOfBirth",
+    "doc" : "Date of birth",
+    "type" : {
+      "type" : "int",
+      "logicalType" : "date"
+    }
+  } ]
+}

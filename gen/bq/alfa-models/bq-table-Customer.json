@@ -1,0 +1,39 @@
+{
+  "tableName" : "Customer",
+  "fields" : [ {
+    "name" : "LastName",
+    "type" : "STRING",
+    "mode" : "REQUIRED",
+    "description" : "Legal last name"
+  }, {
+    "name" : "CustType",
+    "type" : "STRING",
+    "mode" : "REQUIRED",
+    "description" : "Type of customer based on annual spend"
+  }, {
+    "name" : "FirstName",
+    "type" : "STRING",
+    "mode" : "REQUIRED",
+    "description" : "Legal first and middle name"
+  }, {
+    "name" : "PassCodeToken",
+    "type" : "STRING",
+    "mode" : "REQUIRED",
+    "description" : "Security Token"
+  }, {
+    "name" : "Accounts",
+    "type" : "STRING",
+    "mode" : "REPEATED",
+    "description" : "List of accounts held",
+    "max_length" : 8
+  }, {
+    "name" : "cusId",
+    "type" : "STRING",
+    "mode" : "REQUIRED"
+  }, {
+    "name" : "DateOfBirth",
+    "type" : "DATE",
+    "mode" : "REQUIRED",
+    "description" : "Date of birth"
+  } ]
+}

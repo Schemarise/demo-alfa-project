@@ -4,7 +4,6 @@ import alfa.rt.AlfaObject;
 import alfa.rt.DataConsumer;
 import alfa.rt.DataSupplier;
 import alfa.rt.codec.json.JsonCodecConfig;
-import alfa.rt_int.IntImpl;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -71,7 +70,7 @@ public class AlfaSpringJacksonConfig {
             AlfaObject ao = (AlfaObject) o;
             ByteArrayOutputStream stream = new ByteArrayOutputStream();
             try {
-                DataConsumer dc = IntImpl.jsonDataConsumer(JsonCodecConfig.getInstance(), jsonGenerator, stream);
+                DataConsumer dc = alfa.rt.JsonCodec.jsonDataConsumer(JsonCodecConfig.getInstance(), jsonGenerator, stream);
                 dc.consume(ao);
             } catch ( Exception e ) {
                 throw new IOException(e);
@@ -88,7 +87,7 @@ public class AlfaSpringJacksonConfig {
 
         @Override
         public Object deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException, JsonProcessingException {
-            DataSupplier ds = IntImpl.jsonDataSupplier(JsonCodecConfig.getInstance(), jsonParser);
+            DataSupplier ds = alfa.rt.JsonCodec.jsonDataSupplier(JsonCodecConfig.getInstance(), jsonParser);
             try {
                 AlfaObject obj = ds.objectValue(Optional.of(jtype.getRawClass()));
                 return obj;
