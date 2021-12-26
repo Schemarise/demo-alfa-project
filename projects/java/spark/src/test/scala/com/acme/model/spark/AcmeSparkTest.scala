@@ -39,7 +39,8 @@ class AcmeSparkTest extends FunSuite {
   // Create a list ALFA objects, convert them to Spark Rows, then into a DataFrame
   test("ALFA objects to DataFrame") {
     val spark = SparkSession.builder
-      .master("local")
+      .master("local[*]")
+      .config("spark.driver.bindAddress", "127.0.0.1")
       .config("spark.ui.enabled", false)
       .appName("AlfaSparkTest")
       .getOrCreate()
