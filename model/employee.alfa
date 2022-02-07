@@ -27,8 +27,10 @@ testcase EmployeeTest {
    
     # Test the commission levels are calcuated correctly
     testCommisions(sc : alfa.test.Scenario ) : void {
-        let emp40k = partial Employee( Salary = 40000 )
-        let emp80k = partial Employee( Salary = 80000 )
+        // Create random Employee with a known salary and DoB (to avoid assertion failing if random date is less than 18 yrs ago)
+        let emp40k : Employee = sc::randomWith( partial Employee( Salary = 40000, DateOfBirth= toDate("2000-11-01") ) )
+        let emp80k : Employee = sc::randomWith( partial Employee( Salary = 80000, DateOfBirth= toDate("2001-08-21") ) )
+
         sc::assertTrue("3% commission",() => emp40k.Commission == 0.03 )
         sc::assertTrue("5% commission",() => emp80k.Commission == 0.05 )
     } 
