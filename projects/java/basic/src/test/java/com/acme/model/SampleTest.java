@@ -1,8 +1,11 @@
 package com.acme.model;
 
 import java.time.LocalDate;
+import java.util.Collections;
 import java.util.UUID;
 
+import alfa.rt.BuilderConfig;
+import alfa.rt.IBuilderConfig;
 import org.junit.*;
 
 import acme.model.*;
@@ -35,7 +38,8 @@ public class SampleTest {
      */
     @Test
     public void createRandomEmployee() throws Exception {
-        AlfaRandomizer ar = new AlfaRandomizer();
+        IBuilderConfig bc = BuilderConfig.newBuilder().setShouldValidateOnBuild(false).build();
+        AlfaRandomizer ar = new AlfaRandomizer(bc, Collections.emptyList());
         Employee randObj = ar.random(Employee.TYPE_NAME);
         String json = JsonCodec.toFormattedJson(randObj);
         System.out.println(json);

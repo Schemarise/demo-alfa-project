@@ -3,6 +3,8 @@ package com.acme.model;
 import java.util.stream.Collectors;
 
 import acme.model.*;
+import alfa.rt.BuilderConfig;
+import alfa.rt.IBuilderConfig;
 import alfa.rt.utils.AlfaRandomizer;
 import java.util.stream.*;
 import java.util.*;
@@ -12,7 +14,8 @@ import java.util.*;
  * This Mock implementation is used in tests and the REST endpoint project.
  */
 public class CustomerSvcImpl implements CustomerSvc {
-    private AlfaRandomizer ar = new AlfaRandomizer();
+    private IBuilderConfig bc = BuilderConfig.newBuilder().setShouldValidateOnBuild(false).build();
+    private AlfaRandomizer ar = new AlfaRandomizer(bc, Collections.emptyList());
 
     @Override
     public void create(Customer _c, boolean _nameCheck) {
