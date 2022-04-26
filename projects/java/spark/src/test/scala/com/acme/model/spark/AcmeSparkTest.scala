@@ -2,16 +2,18 @@ package com.acme.model.spark
 
 import java.nio.file.Files
 import java.util
+
 import org.scalatest.FunSuite
 import alfa.rt.codec.spark.SparkCodec
 import alfa.rt.utils.AlfaRandomizer
 import org.apache.spark.sql.{Row, SparkSession}
-
 import acme.model.Employee
+import alfa.rt.{BuilderConfig, IBuilderConfig}
 
 class AcmeSparkTest extends FunSuite {
   private val codec = new SparkCodec
-  private val ar = new AlfaRandomizer
+  private val bc = BuilderConfig.newBuilder.setShouldValidateOnBuild(false).build
+  private val ar = new AlfaRandomizer(bc)
 
   // Create a ALFA object object instance and convert it to a Spark Row object
   test("ALFA object to Spark Row") {
