@@ -3,11 +3,11 @@ image:
   
 tasks:
   - name: ALFA IDE Setup
-    before: gp env ALFA_HOME=$HOME/.alfa && curl -L --http1.1 http://alfa-lang.io/downloads/alfa-1.4.0.vsix --output /tmp/alfa-1.4.0.vsix > /dev/null && cd /tmp && jar xf alfa-1.4.0.vsix && mkdir -p /workspace/.vscode-remote/extensions/ && mv extension /workspace/.vscode-remote/extensions/schemarise.alfa-1.4.0
+    before: gp env ALFA_HOME=$HOME/.alfa && curl -L --http1.1 http://alfa-lang.io/downloads/alfa-1.4.0.vsix --output /tmp/alfa-1.4.0.vsix > /dev/null && cd /tmp && unzip -d p1 alfa-1.4.0.vsix &&             mkdir -p /workspace/.vscode-remote/extensions/ && mv p1/extension /workspace/.vscode-remote/extensions/schemarise.alfa-1.4.0
     command: exit
 
   - name: ALFA Assistant Setup
-    before: curl -L --http1.1 http://alfa-lang.io/downloads/alfa-assistant-1.4.0.vsix --output /tmp/alfa-assistant-1.4.0.vsix > /dev/null && cd /tmp && jar xf alfa-assistant-1.4.0.vsix && mkdir -p /workspace/.vscode-remote/extensions/ && mv extension /workspace/.vscode-remote/extensions/schemarise.alfa-assistant-1.4.0
+    before: curl -L --http1.1 http://alfa-lang.io/downloads/alfa-assistant-1.4.0.vsix --output /tmp/alfa-assistant-1.4.0.vsix > /dev/null &&             cd /tmp && unzip -d p2 alfa-assistant-1.4.0.vsix &&   mkdir -p /workspace/.vscode-remote/extensions/ && mv p2/extension /workspace/.vscode-remote/extensions/schemarise.alfa-assistant-1.4.0
     command: exit
 
   - name: ALFA CLI Setup
