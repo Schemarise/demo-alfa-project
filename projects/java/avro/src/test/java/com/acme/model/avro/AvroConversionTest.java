@@ -27,7 +27,7 @@ public class AvroConversionTest {
         OutputStream baos = new ByteArrayOutputStream();
 
         // Can write direct to a stream
-        AvroCodec.exportObj( obj, baos );
+        AvroCodec.exportObj( CodecConfig.defaultCodecConfig(), obj, baos );
 
         // Or export as an Avro record
         GenericRecord gr = AvroCodec.exportToRecord(obj);
