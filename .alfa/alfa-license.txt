@@ -1,0 +1,6 @@
+# THIS LICENSE IS STRICTLY FOR EVALUATION PURPOSES.
+
+licensee=ALFA GitPod Evaluation Usage
+expiry-date=2023-02-01
+license-code=bZxdZIDhNpPe/UkoM+dkMzK/wHOfAZBR2t7AOERClLeRJrMib1yeBv51AytyeLMZsbAMkOVI9WnxImLKGTDPrA==
+type=Evaluation
