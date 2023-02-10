@@ -15,7 +15,7 @@ tasks:
     command: exit
 
   - name: ALFA Trial License Setup
-    before: mkdir -p $HOME/.alfa && curl -L --http1.1 http://raw.githubusercontent.com/alfa-demo/alfa-sample-project/main/.alfa/alfa-license.ini --output $HOME/.alfa/alfa-license.ini > /dev/null
+    before: mkdir -p $HOME/.alfa && curl -L --http1.1 http://raw.githubusercontent.com/alfa-demo/alfa-sample-project/main/.alfa/alfa-license.txt --output $HOME/.alfa/alfa-license.txt > /dev/null
     command: exit
 
   - name: ALFA Python Setup
