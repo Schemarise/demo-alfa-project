@@ -1,6 +1,10 @@
 package com.acme.model;
 
+import com.acme.model.governance.Sensitive;
+
 import java.time.LocalDateTime;
+
+import static com.acme.model.governance.DataSensitivity.High;
 
 public class Investment {
     private String stockSymbol;
@@ -8,9 +12,11 @@ public class Investment {
     private LocalDateTime executed;
     private int quantity;
 
+    @Sensitive(DataSensitivity=High)
     public String getStockSymbol() {
         return stockSymbol;
     }
+
     public void setStockSymbol(String stockSymbol) {
         this.stockSymbol = stockSymbol;
     }

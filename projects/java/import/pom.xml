@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.acme</groupId>
@@ -11,4 +12,56 @@
         <encoding>UTF-8</encoding>
     </properties>
 
+    <build>
+        <plugins>
+            <!-- Run the ALFA Java importer *AFTER THE COMPILE PHASE*, ie. in test-compile below, to reverse engineer classes into ALFA models -->
+            <plugin>
+                <groupId>io.alfa-lang.utils</groupId>
+                <artifactId>alfa-maven-plugin</artifactId>
+                <version>2.4.2</version>
+                <executions>
+                    <execution>
+                        <id>alfa-exec-java2alfa</id>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                        <phase>test-compile</phase>
+                        <configuration>
+                            <srcPath>target/classes</srcPath>
+                            <importSettings>
+                                <importSetting>
+                                    <importType>java2alfa</importType>
+                                </importSetting>
+                            </importSettings>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Run the ALFA HTML Exporter to generate HTML for the imported ALFA files -->
+            <plugin>
+                <groupId>io.alfa-lang.utils</groupId>
+                <artifactId>alfa-maven-plugin</artifactId>
+                <version>2.4.2</version>
+                <executions>
+                    <execution>
+                        <id>alfa-exec-html</id>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                        <phase>test-compile</phase>
+                        <configuration>
+                            <srcPath>target/generated-sources/java2alfa/</srcPath>
+                            <exportSettings>
+                                <exportSetting>
+                                    <exportType>html</exportType>
+                                </exportSetting>
+                            </exportSettings>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+    </build>
 </project>

@@ -1,6 +1,11 @@
 package com.acme.model;
 
+import com.acme.model.governance.DataSensitivity;
+import com.acme.model.governance.Sensitive;
+
 import java.math.BigDecimal;
+
+import static com.acme.model.governance.DataSensitivity.High;
 
 public class Transaction {
     private java.util.UUID id;
@@ -34,9 +39,12 @@ public class Transaction {
     public void setAmount(BigDecimal amount) {
         this.amount = amount;
     }
+
+    @Sensitive(DataSensitivity=High)
     public Transfer getTransferRequest() {
         return transferRequest;
     }
+
     public void setTransferRequest(Transfer transferRequest) {
         this.transferRequest = transferRequest;
     }

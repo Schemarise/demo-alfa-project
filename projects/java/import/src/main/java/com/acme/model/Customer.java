@@ -1,10 +1,15 @@
 package com.acme.model;
 
+
+import com.acme.model.governance.PII;
+
+@PII
 public class Customer {
     private String name;
     private Address legalAddress;
     private java.util.Map< String, Account > accounts;
     private java.util.Set< Investment > portfolio;
+    private String email;
 
     public java.util.Set<Investment> getPortfolio() {
         return portfolio;
@@ -48,4 +53,11 @@ public class Customer {
     }
 
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }
