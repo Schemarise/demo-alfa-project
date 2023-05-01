@@ -1,6 +1,6 @@
 # THIS LICENSE IS STRICTLY FOR EVALUATION PURPOSES.
 
 licensee=ALFA Github Evaluation Usage
-expiry-date=2023-05-01
-license-code=AmhObhU+7qzLczgSHf26iwu24l3R/44IIyZSnwQhxgy3QprloVMxyYegA9U3BQKGKMBjkQJp1lrN7zsDxLzjPA==
+expiry-date=2023-06-01
+license-code=h27Iu/XrDa+nR+Nc9wOx5z6InE8v/H8Rg1AZml3ko3MXhLCXbDBT/Uh6Krv+sC51y2y5N3L5junGaWhLhDfz1Q==
 type=Evaluation
