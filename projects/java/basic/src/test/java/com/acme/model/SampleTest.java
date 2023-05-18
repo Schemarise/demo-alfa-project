@@ -20,7 +20,7 @@ public class SampleTest {
     public void createEmployeeAndPrint() throws Exception {
         EmployeeKey k = EmployeeKey.newBuilder().setId(UUID.randomUUID()).build();
         Employee bob = Employee.newBuilder().
-                            key(k).
+                            set$key(k).
                             setFirstName("Bob").
                             setLastName("Smith").
                             setJobTitle("Manager").

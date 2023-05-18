@@ -27,17 +27,19 @@ public class AvroConversionTest {
         OutputStream baos = new ByteArrayOutputStream();
 
         // Can write direct to a stream
-        AvroCodec.exportObj( CodecConfig.defaultCodecConfig(), obj, baos );
+        AvroCodec ac = new AvroCodec();
+        ac.exportObj(obj, baos);
+        ac.exportObj( obj, baos );
 
         // Or export as an Avro record
-        GenericRecord gr = AvroCodec.exportToRecord(obj);
+        GenericRecord gr = ac.exportToRecord(obj);
         
         System.out.println( gr );
         Assert.assertTrue( gr.get("LastName") != null );        
         Assert.assertTrue( gr.get("Salary") != null );        
 
         // For round tripping, read the Avro record to recreate Alfa object
-        Employee decoded = AvroCodec.importObj(ccb, gr);
+        Employee decoded = ac.importObj(gr);
 
         // Assert what was round-tripped and original object matches
         Assert.assertEquals(obj, decoded);        

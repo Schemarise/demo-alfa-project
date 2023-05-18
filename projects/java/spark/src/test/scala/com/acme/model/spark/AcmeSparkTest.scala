@@ -4,10 +4,10 @@ import java.nio.file.Files
 import java.util
 
 import org.scalatest.FunSuite
-import alfa.rt.codec.spark.SparkCodec
 import alfa.rt.utils.AlfaRandomizer
 import org.apache.spark.sql.{Row, SparkSession}
 import acme.model.Employee
+import alfa.rt.spark.codec.SparkCodec
 import alfa.rt.{BuilderConfig, IBuilderConfig}
 
 class AcmeSparkTest extends FunSuite {
