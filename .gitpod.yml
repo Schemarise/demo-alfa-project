@@ -11,7 +11,7 @@ tasks:
     command: exit
 
   - name: ALFA CLI Setup
-    before: mkdir -p $HOME/.alfa && curl -L --http1.1 http://alfa-lang.io/downloads/AlfaCLI-2.5.1.zip --output $HOME/.alfa/AlfaCLI-2.5.1.zip > /dev/null && cd $HOME/.alfa && unzip AlfaCLI-2.5.1.zip && rm -rf samples
+    before: mkdir -p $HOME/.alfa && curl -L --http1.1 http://alfa-lang.io/downloads/AlfaPackage-2.5.1.zip --output $HOME/.alfa/AlfaPackage-2.5.1.zip > /dev/null && cd $HOME/.alfa && unzip AlfaPackage-2.5.1.zip && rm -rf samples
     command: exit
 
   - name: ALFA Trial License Setup
