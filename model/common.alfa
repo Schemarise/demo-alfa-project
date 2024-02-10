@@ -17,6 +17,7 @@ trait Person {
     # Ensure derived type instance is an adult
     assert IsAdult {
         let age = dateDiff( today(), DateOfBirth )/365  
-        return if (age<18) some("Not an adult") else none
+        if (age<18) 
+            raise error("Not an adult")  
     }
 }
