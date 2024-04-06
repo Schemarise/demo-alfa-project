@@ -1,5 +1,5 @@
 # ISO 20022 auth.047.001.01 - Financial Instrument Reporting Country Code Report
-namespace ISO20022.FinancialInstrumentReportingCountryCodeReportV01
+namespace ISO20022.FinInstrRepCtyCRepV01
 
 # Report detailing all countries and their 2 character ISO 3166 code and 
 # SupplementaryData - Additional information that can not be captured in the structured fields and/or any other specific block.
