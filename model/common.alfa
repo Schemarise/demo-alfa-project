@@ -1,5 +1,5 @@
 # Sample model defined in ALFA
-namespace acme.model
+namespace demo.model
 
 # Type of customer based on usage
 enum CustomerType {
@@ -11,7 +11,7 @@ enum CustomerType {
 # Base Person type with generic fields 
 @PII( Classification = DataClassification.Confidential,
       Sensitivity = DataSensitivity.High )
-trait Person {
+trait Person scope Employee, Customer {
     FirstName : string          ## Legal first and middle name
     LastName : string           ## Legal last name
     DateOfBirth : date          ## Date of birth 
@@ -19,6 +19,7 @@ trait Person {
 
     # Ensure derived type instance is an adult
     assert IsAdult {
+        # Capture age
         let age = dateDiff( DateOfBirth, today() )/365  
         if (age<18) 
             raise error("Age ${age} - not an adult") 

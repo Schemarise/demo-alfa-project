@@ -1,4 +1,4 @@
-namespace acme.model
+namespace demo.model
 
 # Annotation to be used for Personal Identifiable Info against various definitions
 annotation PII (entity, record, trait, field ) {

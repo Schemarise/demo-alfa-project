@@ -1,5 +1,5 @@
 # Namespace containing models used to load data
-namespace acme.model.dataload
+namespace demo.model.dataload
 
 # Model to capture employee CSV data
 record EmployeeData {
@@ -11,22 +11,22 @@ record EmployeeData {
 }
 
 # Transformer from EmployeeData to Employee
-transform( d : EmployeeData ) : acme.model.Employee {
+transform( d : EmployeeData ) : demo.model.Employee {
     let idx = indexOf(d.Name, " ")
     let fName = if ( idx > 0 ) substring(d.Name, 0, idx ) else ""
     let lName = substring(d.Name, idx + 1)
-    let k = new acme.model.EmployeeKey(newUUID())
+    let k = new demo.model.EmployeeKey(newUUID())
 
     let ranking = if ( matches("[C.O]", d.JobTitle) ) 10 else 5
  
-    return new acme.model.Employee( k, fName, lName, toDate( d.Dob ), d.JobTitle, 50000.00, { d.Role : ranking } )
+    return new demo.model.Employee( k, fName, lName, toDate( d.Dob ), d.JobTitle, 50000.00, { d.Role : ranking } )
 }
 
 # Test to ensure that EmployeeData can be converted correctly to Employee
 testcase EmployeeDataTest {
-    testTransform(sc : alfa.test.Scenario ) : void {
+    testTransform(sc : schemarise.alfa.test.Scenario ) : void {
         let raw = new EmployeeData("Joe Bloggs", "2000-01-01", "VP", 100000.00, "Manager" )
-        let conv = transform< acme.model.Employee >( raw )
+        let conv = transform< demo.model.Employee >( raw )
 
         sc::assertTrue("Lastname",() => conv.LastName == "Bloggs" )
         sc::assertTrue("Dob Year",() => year(conv.DateOfBirth) == 2000 )

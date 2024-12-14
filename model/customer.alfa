@@ -1,4 +1,4 @@
-namespace acme.model
+namespace demo.model
 
 # Customer entity keyed by a uuid based on Person
 entity Customer key(cusId:uuid) includes Person {
