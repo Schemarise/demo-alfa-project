@@ -3,15 +3,15 @@ image:
   
 tasks:
   - name: ALFA IDE Setup
-    before: if gp env | grep -q ALFA_HOME; then gp env -u ALFA_HOME; fi && gp env ALFA_HOME=$HOME/.alfa && curl -L --http1.1 http://alfa-lang.io/downloads/alfa-3.0.2.vsix --output /tmp/alfa-3.0.2.vsix > /dev/null && cd /tmp && unzip -d p1 alfa-3.0.2.vsix && mkdir -p /workspace/.vscode-remote/extensions/ && mv p1/extension /workspace/.vscode-remote/extensions/schemarise.alfa-3.0.2
+    before: if gp env | grep -q ALFA_HOME; then gp env -u ALFA_HOME; fi && gp env ALFA_HOME=$HOME/.alfa && curl -L --http1.1 http://alfa-lang.io/downloads/alfa-3.4.0.vsix --output /tmp/alfa-3.4.0.vsix > /dev/null && cd /tmp && unzip -d p1 alfa-3.4.0.vsix && mkdir -p /workspace/.vscode-remote/extensions/ && mv p1/extension /workspace/.vscode-remote/extensions/schemarise.alfa-3.4.0
     command: exit
 
   - name: ALFA Assistant Setup
-    before: curl -L --http1.1 http://alfa-lang.io/downloads/alfa-assistant-3.0.2.vsix --output /tmp/alfa-assistant-3.0.2.vsix > /dev/null &&             cd /tmp && unzip -d p2 alfa-assistant-3.0.2.vsix &&   mkdir -p /workspace/.vscode-remote/extensions/ && mv p2/extension /workspace/.vscode-remote/extensions/schemarise.alfa-assistant-3.0.2
+    before: curl -L --http1.1 http://alfa-lang.io/downloads/alfa-assistant-3.4.0.vsix --output /tmp/alfa-assistant-3.4.0.vsix > /dev/null &&             cd /tmp && unzip -d p2 alfa-assistant-3.4.0.vsix &&   mkdir -p /workspace/.vscode-remote/extensions/ && mv p2/extension /workspace/.vscode-remote/extensions/schemarise.alfa-assistant-3.4.0
     command: exit
 
   - name: ALFA CLI Setup
-    before: mkdir -p $HOME/.alfa && curl -L --http1.1 http://alfa-lang.io/downloads/AlfaPackage-3.0.2.zip --output $HOME/.alfa/AlfaPackage-3.0.2.zip > /dev/null && cd $HOME/.alfa && unzip AlfaPackage-3.0.2.zip && rm -rf samples
+    before: mkdir -p $HOME/.alfa && curl -L --http1.1 http://alfa-lang.io/downloads/AlfaPackage-3.4.0.zip --output $HOME/.alfa/AlfaPackage-3.4.0.zip > /dev/null && cd $HOME/.alfa && unzip AlfaPackage-3.4.0.zip && rm -rf samples
     command: exit
 
   - name: ALFA Trial License Setup
@@ -19,7 +19,7 @@ tasks:
     command: exit
 
   - name: ALFA Python Setup
-    before: curl -L --http1.1 http://alfa-lang.io/downloads/alfa-pylib-3.0.2.tar.gz --output /tmp/alfa-pylib-3.0.2.tar.gz > /dev/null && pip install /tmp/alfa-pylib-3.0.2.tar.gz
+    before: curl -L --http1.1 http://alfa-lang.io/downloads/alfa-pylib-3.4.0.tar.gz --output /tmp/alfa-pylib-3.4.0.tar.gz > /dev/null && pip install /tmp/alfa-pylib-3.4.0.tar.gz
     command: exit
 
   - name: Dot Setup

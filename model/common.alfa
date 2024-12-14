@@ -12,9 +12,9 @@ enum CustomerType {
 @PII( Classification = DataClassification.Confidential,
       Sensitivity = DataSensitivity.High )
 trait Person scope Employee, Customer {
-    FirstName : string          ## Legal first and middle name
-    LastName : string           ## Legal last name
-    DateOfBirth : date          ## Date of birth 
+    FirstName : string                          ## Legal first and middle name
+    LastName : string                           ## Legal last name
+    DateOfBirth : date("1900-01-01", *)         ## Date of birth 
     // Address : list<string>      ## Residential address
 
     # Ensure derived type instance is an adult
