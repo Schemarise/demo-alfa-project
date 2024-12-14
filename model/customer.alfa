@@ -18,7 +18,7 @@ service CustomerSvc {
             /# Ensure not already a customer #/ nameCheck : boolean ) : void 
   
     # Fetch customer by key, if not exists, None returned
-    get( /# Key used for search#/ k:CustomerKey ) : Customer? 
+    fetch( /# Key used for search#/ k:CustomerKey ) : Customer? 
 
     # Get all customers 
     getAllCustomers() : list<Customer> 

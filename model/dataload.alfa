@@ -1,5 +1,5 @@
-# Namespace containing models used to load data
-namespace demo.model.dataload
+# Namespace containing models used to transform and load Employee data
+namespace demo.dataload
 
 # Model to capture employee CSV data
 record EmployeeData {

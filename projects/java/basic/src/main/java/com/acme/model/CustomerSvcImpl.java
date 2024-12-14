@@ -2,10 +2,10 @@ package com.acme.model;
 
 import java.util.stream.Collectors;
 
-import acme.model.*;
-import alfa.rt.BuilderConfig;
-import alfa.rt.IBuilderConfig;
-import alfa.rt.utils.AlfaRandomizer;
+import demo.model.*;
+import com.schemarise.alfa.runtime.BuilderConfig;
+import com.schemarise.alfa.runtime.IBuilderConfig;
+import com.schemarise.alfa.runtime.utils.AlfaRandomizer;
 import java.util.stream.*;
 import java.util.*;
 
@@ -22,8 +22,8 @@ public class CustomerSvcImpl implements CustomerSvc {
     }
 
     @Override
-    public Optional<Customer> get(CustomerKey _k) {
-        return Optional.of(ar.random(Customer.TYPE_NAME));
+    public Optional<Customer> fetch(CustomerKey _k) {
+        return Optional.of(ar.random(Customer.CustomerDescriptor.TYPE_NAME));
     }
 
     @Override
@@ -34,6 +34,6 @@ public class CustomerSvcImpl implements CustomerSvc {
     @Override
     public List<Customer> getAllCustomers() {
         // We simply create 20 random Customer objects using ALFA's randomiser for this example ...
-        return IntStream.range(0, 20).boxed().map( i -> (Customer) ar.random(Customer.TYPE_NAME) ).collect( Collectors.toList());
+        return IntStream.range(0, 20).boxed().map( i -> (Customer) ar.random(Customer.CustomerDescriptor.TYPE_NAME) ).collect( Collectors.toList());
     }
 }

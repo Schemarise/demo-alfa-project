@@ -1,6 +1,6 @@
 package com.acme.model.rest;
 
-import acme.model.*;
+import demo.model.*;
 import com.acme.model.*;
 
 // The factory to create a CustomerSvc implementation. We reuse the one from the Basic project.

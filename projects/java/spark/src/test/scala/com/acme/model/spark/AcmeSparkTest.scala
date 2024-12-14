@@ -1,14 +1,14 @@
 package com.acme.model.spark
 
+import com.schemarise.alfa.runtime.lib.spark.codec.SparkCodec
+
 import java.nio.file.Files
 import java.util
-
 import org.scalatest.FunSuite
-import alfa.rt.utils.AlfaRandomizer
+import com.schemarise.alfa.runtime.utils.AlfaRandomizer
 import org.apache.spark.sql.{Row, SparkSession}
-import acme.model.Employee
-import alfa.rt.spark.codec.SparkCodec
-import alfa.rt.{BuilderConfig, IBuilderConfig}
+import demo.model.Employee
+import com.schemarise.alfa.runtime.BuilderConfig
 
 class AcmeSparkTest extends FunSuite {
   private val codec = new SparkCodec
@@ -19,7 +19,7 @@ class AcmeSparkTest extends FunSuite {
   test("ALFA object to Spark Row") {
 
     // Create a randomised Employee object
-    val emp = ar.random[Employee](Employee.TYPE_NAME)
+    val emp = ar.random[Employee](Employee.EmployeeDescriptor.TYPE_NAME)
 
     // Export/flatten the ALFA object into a Spark Row object
     val row = codec.exportToRow(emp)
@@ -53,12 +53,12 @@ class AcmeSparkTest extends FunSuite {
     
     // Lets create 20 randomized Employee objects and place them in a list of Spark row objects
     Range.apply(0, 20).map( _ => {
-      val d = ar.random[Employee](Employee.TYPE_NAME)
+      val d = ar.random[Employee](Employee.EmployeeDescriptor.TYPE_NAME)
       rows.add(codec.exportToRow(d))
     } )
 
     // Create a Spark DataFrame using the Rows created off the ALFA objects
-    val df = spark.createDataFrame( rows, codec.toSchema(Employee.TYPE_NAME) ).toDF()
+    val df = spark.createDataFrame( rows, codec.toSchema(Employee.EmployeeDescriptor.TYPE_NAME) ).toDF()
     assert( df.count() == 20 )
 
     // Write the contents, and print the dataframe

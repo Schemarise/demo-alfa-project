@@ -1,18 +1,18 @@
 package com.acme.model.avro;
 
-import alfa.rt.codec.CodecConfig;
+import com.schemarise.alfa.runtime.codec.CodecConfig;
+import com.schemarise.alfa.runtime.utils.AlfaRandomizer;
+import com.schemarise.rt.lib.avro.AvroCodec;
 import org.junit.*;
 import org.apache.avro.generic.GenericRecord;
 
-import alfa.rt.BuilderConfig;
-import alfa.rt.IBuilderConfig;
+import com.schemarise.alfa.runtime.BuilderConfig;
+import com.schemarise.alfa.runtime.IBuilderConfig;
 
-import alfa.rt.codec.avro.*;
 import java.io.*;
 import java.util.*;
 
-import acme.model.*;
-import alfa.rt.utils.AlfaRandomizer;
+import demo.model.*;
 
 public class AvroConversionTest {
     private IBuilderConfig bc = BuilderConfig.newBuilder().setShouldValidateOnBuild(false).build();
@@ -22,7 +22,7 @@ public class AvroConversionTest {
     @Test
     @Ignore
     public void testAlfa2AvroRoundTrip() throws Exception {
-        Employee obj = ar.random(Employee.TYPE_NAME);
+        Employee obj = ar.random(Employee.EmployeeDescriptor.TYPE_NAME);
 
         OutputStream baos = new ByteArrayOutputStream();
 

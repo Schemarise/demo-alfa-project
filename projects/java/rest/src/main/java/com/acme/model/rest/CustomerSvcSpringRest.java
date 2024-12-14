@@ -1,4 +1,6 @@
-package com.acme.model.rest;
+package com.demo.model.rest;
+
+import com.acme.model.rest.CustomerSvcFactoryImpl;
 
 /**
  * This file is generated as part of the ALFA Java code generation.
@@ -7,25 +9,25 @@ package com.acme.model.rest;
  */
 @org.springframework.web.bind.annotation.RestController(value = "CustomerSvc")
 /** Customer Service API for CRUD and other operations */
-public class CustomerSvcSpringRest implements acme.model.CustomerSvc {
-    private final acme.model.CustomerSvc delegate;
+public class CustomerSvcSpringRest implements demo.model.CustomerSvc {
+    private final demo.model.CustomerSvc delegate;
 
     public CustomerSvcSpringRest() {
         this( new CustomerSvcFactoryImpl().create() );
     }
 
-    public CustomerSvcSpringRest(acme.model.CustomerSvc delegate) {
+    public CustomerSvcSpringRest(demo.model.CustomerSvc delegate) {
         this.delegate = delegate;
     }
 
     @org.springframework.web.bind.annotation.RequestMapping(
-            value = "/api/acme.model/create",
+            value = "/api/demo.model/create",
             method = org.springframework.web.bind.annotation.RequestMethod.POST)
     /** Create the give customer */
     public void create(
             @org.springframework.web.bind.annotation.RequestBody
                     /** The new customer */
-                    acme.model.Customer _c,
+                    demo.model.Customer _c,
             @org.springframework.web.bind.annotation.RequestBody
                     /** Ensure not already a customer */
                     boolean _nameCheck) {
@@ -33,32 +35,32 @@ public class CustomerSvcSpringRest implements acme.model.CustomerSvc {
     }
 
     @org.springframework.web.bind.annotation.RequestMapping(
-            value = "/api/acme.model/get",
+            value = "/api/demo.model/get",
             method = org.springframework.web.bind.annotation.RequestMethod.POST)
     /** Fetch customer by key, if not exists, None returned */
-    public java.util.Optional<acme.model.Customer> get(
+    public java.util.Optional<demo.model.Customer> fetch(
             @org.springframework.web.bind.annotation.RequestBody
                     /** Key used for search */
-                    acme.model.CustomerKey _k) {
-        return this.delegate.get(_k);
+                    demo.model.CustomerKey _k) {
+        return this.delegate.fetch(_k);
     }
 
     @org.springframework.web.bind.annotation.RequestMapping(
-            value = "/api/acme.model/getAllCustomers",
+            value = "/api/demo.model/getAllCustomers",
             method = org.springframework.web.bind.annotation.RequestMethod.POST)
     /** Get all customers */
-    public java.util.List<acme.model.Customer> getAllCustomers() {
+    public java.util.List<demo.model.Customer> getAllCustomers() {
         return this.delegate.getAllCustomers();
     }
 
     @org.springframework.web.bind.annotation.RequestMapping(
-            value = "/api/acme.model/getByType",
+            value = "/api/demo.model/getByType",
             method = org.springframework.web.bind.annotation.RequestMethod.POST)
     /** Get all customers for given type */
-    public java.util.List<acme.model.Customer> getByType(
+    public java.util.List<demo.model.Customer> getByType(
             @org.springframework.web.bind.annotation.RequestBody
                     /** Type to search for */
-                    acme.model.CustomerType _t) {
+                    demo.model.CustomerType _t) {
         return this.delegate.getByType(_t);
     }
 }

@@ -4,13 +4,14 @@ import java.time.LocalDate;
 import java.util.Collections;
 import java.util.UUID;
 
-import alfa.rt.BuilderConfig;
-import alfa.rt.IBuilderConfig;
+import com.schemarise.alfa.runtime.Alfa;
+import com.schemarise.alfa.runtime.BuilderConfig;
+import com.schemarise.alfa.runtime.IBuilderConfig;
 import org.junit.*;
 
-import acme.model.*;
-import alfa.rt.JsonCodec;
-import alfa.rt.utils.AlfaRandomizer;
+import demo.model.*;
+import com.schemarise.alfa.runtime.JsonCodec;
+import com.schemarise.alfa.runtime.utils.AlfaRandomizer;
 
 public class SampleTest {
     /**
@@ -18,8 +19,8 @@ public class SampleTest {
      */
     @Test
     public void createEmployeeAndPrint() throws Exception {
-        EmployeeKey k = EmployeeKey.newBuilder().setId(UUID.randomUUID()).build();
-        Employee bob = Employee.newBuilder().
+        EmployeeKey k = EmployeeKey.builder().setId(UUID.randomUUID()).build();
+        Employee bob = Employee.builder().
                             set$key(k).
                             setFirstName("Bob").
                             setLastName("Smith").
@@ -29,7 +30,7 @@ public class SampleTest {
                             putSkillsetLevels("ALFA", 8).
                             putSkillsetLevels("AWS", 6).build();
 
-        String bobJson = JsonCodec.toFormattedJson(bob);
+        String bobJson = Alfa.jsonCodec().toFormattedJson(bob);
         System.out.println(bobJson);
     }
 
@@ -40,8 +41,8 @@ public class SampleTest {
     public void createRandomEmployee() throws Exception {
         IBuilderConfig bc = BuilderConfig.newBuilder().setShouldValidateOnBuild(false).build();
         AlfaRandomizer ar = new AlfaRandomizer(bc, Collections.emptyList());
-        Employee randObj = ar.random(Employee.TYPE_NAME);
-        String json = JsonCodec.toFormattedJson(randObj);
+        Employee randObj = ar.random(Employee.EmployeeDescriptor.TYPE_NAME);
+        String json = Alfa.jsonCodec().toFormattedJson(randObj);
         System.out.println(json);
     }
 

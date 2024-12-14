@@ -14,9 +14,9 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>io.alfa-lang.utils</groupId>
+                <groupId>com.schemarise.alfa.utils</groupId>
                 <artifactId>alfa-maven-plugin</artifactId>
-                <version>2.4.2</version>
+                <version>3.4.0</version>
                 <executions>
                     <execution>
                         <id>alfa-exec</id>

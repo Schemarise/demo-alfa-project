@@ -1,9 +1,10 @@
 package com.acme.model.rest;
 
-import alfa.rt.AlfaObject;
-import alfa.rt.DataConsumer;
-import alfa.rt.DataSupplier;
-import alfa.rt.codec.json.JsonCodecConfig;
+import com.schemarise.alfa.runtime.Alfa;
+import com.schemarise.alfa.runtime.AlfaObject;
+import com.schemarise.alfa.runtime.DataConsumer;
+import com.schemarise.alfa.runtime.DataSupplier;
+import com.schemarise.alfa.runtime.codec.json.JsonCodecConfig;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -70,7 +71,7 @@ public class AlfaSpringJacksonConfig {
             AlfaObject ao = (AlfaObject) o;
             ByteArrayOutputStream stream = new ByteArrayOutputStream();
             try {
-                DataConsumer dc = alfa.rt.JsonCodec.jsonDataConsumer(JsonCodecConfig.getInstance(), jsonGenerator, stream);
+                DataConsumer dc = Alfa.jsonCodec().jsonDataConsumer(JsonCodecConfig.getInstance(), jsonGenerator, stream);
                 dc.consume(ao);
             } catch ( Exception e ) {
                 throw new IOException(e);
@@ -87,7 +88,7 @@ public class AlfaSpringJacksonConfig {
 
         @Override
         public Object deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException, JsonProcessingException {
-            DataSupplier ds = alfa.rt.JsonCodec.jsonDataSupplier(JsonCodecConfig.getInstance(), jsonParser);
+            DataSupplier ds = Alfa.jsonCodec().jsonDataSupplier(JsonCodecConfig.getInstance(), jsonParser);
             try {
                 AlfaObject obj = ds.objectValue(Optional.of(jtype.getRawClass()));
                 return obj;
