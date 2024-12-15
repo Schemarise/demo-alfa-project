@@ -1,0 +1,18 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "features": {
+  },
+  "extensions": [
+	"schemarise.alfa",
+	"daiyy.quick-html-previewer"
+],
+  "containerEnv" : {
+    "ALFA_HOME" : "/home/codespace/.alfa",
+    "ALFA_TOOLS_PORT" : "8000"
+  },
+  "remoteEnv" : {
+        "PATH": "${containerEnv:PATH}:/home/codespace/.alfa/bin" 
+  },
+  "onCreateCommand": "${containerWorkspaceFolder}/.alfa/oncreate.sh",
+  "postCreateCommand": "cp ${containerWorkspaceFolder}/.alfa/alfa-license.txt /home/codespace/.alfa/"
+}
