@@ -1,7 +1,5 @@
 package com.acme.model.spark
 
-import com.schemarise.alfa.runtime.lib.spark.codec.SparkCodec
-
 import java.nio.file.Files
 import java.util
 import org.scalatest.FunSuite
@@ -9,9 +7,10 @@ import com.schemarise.alfa.runtime.utils.AlfaRandomizer
 import org.apache.spark.sql.{Row, SparkSession}
 import demo.model.Employee
 import com.schemarise.alfa.runtime.BuilderConfig
+import com.schemarise.alfa.runtime.lib.spark.AlfaSpark
 
 class AcmeSparkTest extends FunSuite {
-  private val codec = new SparkCodec
+  private val codec = AlfaSpark.newSparkCodec()
   private val bc = BuilderConfig.newBuilder.setShouldValidateOnBuild(false).build
   private val ar = new AlfaRandomizer(bc)
 

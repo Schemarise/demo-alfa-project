@@ -1,8 +1,9 @@
 package com.acme.model.avro;
 
 import com.schemarise.alfa.runtime.codec.CodecConfig;
+import com.schemarise.alfa.runtime.lib.avro.AlfaAvro;
+import com.schemarise.alfa.runtime.lib.avro.AvroCodec;
 import com.schemarise.alfa.runtime.utils.AlfaRandomizer;
-import com.schemarise.rt.lib.avro.AvroCodec;
 import org.junit.*;
 import org.apache.avro.generic.GenericRecord;
 
@@ -27,7 +28,7 @@ public class AvroConversionTest {
         OutputStream baos = new ByteArrayOutputStream();
 
         // Can write direct to a stream
-        AvroCodec ac = new AvroCodec();
+        AvroCodec ac = AlfaAvro.newAvroCodec();
         ac.exportObj(obj, baos);
         ac.exportObj( obj, baos );
 
