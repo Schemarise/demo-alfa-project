@@ -1,8 +1,8 @@
 # Namespace containing models used to transform and load Employee data
 namespace demo.dataload
 
-# Model to capture employee CSV data
-record EmployeeData {
+# Model to capture employee CSV data, internal use only, will not be published out via APIs etc.
+internal record EmployeeData {
     Name : string      
     Dob : string
     JobTitle : string
