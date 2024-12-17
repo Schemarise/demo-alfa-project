@@ -1,3 +1,4 @@
+sdk default java 17.0.13-ms
 
 pip install isodate
 pip install coverage
