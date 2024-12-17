@@ -3,9 +3,6 @@
   "features": {
     "ghcr.io/devcontainers/features/java:1": {
       "version": "17"
-    },
-    "containerEnv": {
-      "DISABLE_JAVA_BUILD": "true"
     }    
   },
   "extensions": [
