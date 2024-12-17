@@ -1,5 +1,5 @@
 <!-- 
-    If viewing raw file in GitPod, for easier reading, right-click on the file on Explorer, and select 'Open Preview' 
+    If viewing raw file in GitPod/GitHub, for easier reading, right-click on the file on Explorer, and select 'Open Preview' 
 /-->
 
 # ALFA-based Python Sample Projects

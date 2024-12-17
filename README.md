@@ -1,5 +1,5 @@
 <!-- 
-    If viewing raw file in GitPod, for easier reading, right-click on the file on Explorer, and select 'Open Preview' 
+    If viewing raw file in GitPod/GitHub, for easier reading, right-click on the file on Explorer, and select 'Open Preview' 
 /-->
 
 [![Built using ALFA](https://alfa-lang.io/_images/built-using-ALFA.png)](https://alfa-lang.io)
@@ -19,7 +19,17 @@ This project can be used directly from the browser using github/gitpod integrati
 > 
 > <a href="https://gitpod.io/#https://github.com/alfa-demo/alfa-sample-project" target="_blank"><img src="https://gitpod.io/button/open-in-gitpod.svg"/></a>
 > 
-> **Tip:** Have a look at the *Quick Tour* below first, then right-click on the Gitpod button and open in new tab/window.
+> Or
+>
+> Open this project directly in **Github Codespaces**.
+>
+> **Tip:** Have a look at the *Quick Tour* below first, then right-click on the Gitpod button and open in new tab/window or in GitHub Codespaces.
+
+
+### Want to see complex example models visualized in ALFA?
+
+See https://alfa-demo.github.io/imported-schema-docs
+
 
 # Quick Tour
 
@@ -54,6 +64,5 @@ these are conbined in sub-directories within this project.
 
 1. [Java/Scala samples](projects/java/README.md) - 4 sample projects showing ALFA being used in different usecases.
 2. [Python samples](projects/python/README.md) - Coming soon
-
 
 For any questions, please email `info@schemarise.com`.
