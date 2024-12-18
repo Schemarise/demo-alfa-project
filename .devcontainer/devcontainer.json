@@ -13,5 +13,5 @@
   },
   "onCreateCommand": "${containerWorkspaceFolder}/.alfa/oncreate.sh",
   "postCreateCommand": "cp ${containerWorkspaceFolder}/.alfa/alfa-license.txt /home/codespace/.alfa/",
-  "postStartCommand": "sdk default java 17.0.13-ms"
+  "postStartCommand": "echo sdk default java 17.0.13-ms >> ~/.bashrc"
 }
