@@ -1,20 +1,21 @@
-from alfa.rt.JsonCodec import JsonCodec
-from alfa.rt.AlfaRandomizer import AlfaRandomizer
+from schemarise.alfa.runtime.JsonCodec import JsonCodec
+from schemarise.alfa.runtime.AlfaRandomizer import AlfaRandomizer
+from schemarise.alfa.runtime.BuilderConfig import BuilderConfig
 
 import datetime
 import uuid
 
-from acme.model.CustomerType import CustomerType
-from acme.model.Customer import Customer
-from acme.model.CustomerKey import CustomerKey
+from demo.model.CustomerType import CustomerType
+from demo.model.Customer import Customer
+from demo.model.CustomerKey import CustomerKey
 
-from alfa.rt.DFBuilder import DFBuilder
+from schemarise.alfa.runtime.DFBuilder import DFBuilder
 
 # Create an Alfa Randomiser class
-randomizer = AlfaRandomizer([])
+randomizer = AlfaRandomizer([], BuilderConfig( should_validate_onbuild = False ))
 
 # Create a random Customer object 
-rand_obj = randomizer.random("acme.model.Customer")
+rand_obj = randomizer.random("demo.model.Customer")
 
 # Convert Generated Alfa object to JSON and print it
 json = JsonCodec.to_json(rand_obj)
@@ -32,7 +33,7 @@ cb.__key__ = ck
 cb.FirstName = "Joe"
 cb.LastName = "Bloggs"
 cb.DateOfBirth = datetime.date(2000, 5, 17)
-cb.Accounts = [ "1123124", "3241232", "2903480" ]
+cb.Accounts = [ "11231244", "32421232", "22903480" ]
 cb.CustType = CustomerType.Standard
 cb.PassCodeToken = "Secr3t1!"
 

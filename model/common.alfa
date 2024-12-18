@@ -22,7 +22,7 @@ trait Person scope Employee, Customer {
         # Capture age
         let age = dateDiff( DateOfBirth, today() )/365  
         if (age<18) 
-            raise error("Age ${age} - not an adult") 
+            raise error("Age ${age} - not an adult. Dob ${DateOfBirth}.") 
     }
 }
 

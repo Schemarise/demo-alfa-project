@@ -17,7 +17,7 @@ This project generates the ALFA model to Java along with the testcase. A hand-wr
 ## REST
 This project depends on the Basic project, and exposes the [service](https://alfa-lang.io/lang/constructs/service.html) in the example model as a Swagger REST endpoint. 
   - Run this project using `mvn org.springframework.boot:spring-boot-maven-plugin:run`
-  - Once started Apache Tomcat will start Swagger on port 8080. Navigate to `https://<8080- your gitpod host url>/swagger-ui.html`
+  - Once started Apache Tomcat will start Swagger on port 8080. Navigate to `https://<8080- your gitpod/github host url>/swagger-ui.html`
   - Try executing `getByType` or `getAllCustomers` methods to see the random data returned from the implementation in `java/basic/src/main/java/com/acme/model/CustomerSvcImpl.java`
 
 ## Spark

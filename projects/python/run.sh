@@ -1,5 +1,8 @@
 # Set required env vars
-eval $(gp env -e)
+if type gp > /dev/null 2>&1 
+then
+    eval $(gp env -e)
+fi
 
 # Generate Python code for the model
 $ALFA_HOME/bin/alfa -o generated -e python -c ../../model/
