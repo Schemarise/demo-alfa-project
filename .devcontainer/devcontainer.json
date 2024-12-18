@@ -1,14 +1,11 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/java:17",
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
   "features": {
     "ghcr.io/devcontainers/features/java:1": {
-      "version": "none",
-      "installGradle": "true",
+      "version": "17",
+      "installGradle": "false",
       "installMaven": "true"
-    },
-    "ghcr.io/devcontainers/features/node:1": {
-      "version": "latest"
-    }       
+    }
   },
   "extensions": [
 	"schemarise.alfa"
@@ -21,5 +18,5 @@
         "PATH": "${containerEnv:PATH}:/home/codespace/.alfa/bin" 
   },
   "onCreateCommand": "${containerWorkspaceFolder}/.alfa/oncreate.sh",
-  "postCreateCommand": "cp ${containerWorkspaceFolder}/.alfa/alfa-license.txt /home/codespace/.alfa/ && sdk default java 17.0.13-ms"
+  "postCreateCommand": "cp ${containerWorkspaceFolder}/.alfa/alfa-license.txt /home/codespace/.alfa/"
 }
