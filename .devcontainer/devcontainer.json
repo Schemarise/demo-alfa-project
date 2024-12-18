@@ -1,9 +1,14 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "image": "mcr.microsoft.com/devcontainers/java:17",
   "features": {
     "ghcr.io/devcontainers/features/java:1": {
-      "version": "17"
-    }    
+      "version": "none",
+      "installGradle": "true",
+      "installMaven": "true"
+    },
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "latest"
+    }       
   },
   "extensions": [
 	"schemarise.alfa"
