@@ -17,7 +17,7 @@ This project can be used directly from the browser using github/gitpod integrati
 
 > **Click the button below to open the project in your browser.**
 > 
-> <a href="https://gitpod.io/#https://github.com/alfa-demo/alfa-sample-project" target="_blank"><img src="https://gitpod.io/button/open-in-gitpod.svg"/></a>
+> <a href="https://gitpod.io/#https://github.com/Schemarise/alfa-sample-project" target="_blank"><img src="https://gitpod.io/button/open-in-gitpod.svg"/></a>
 > 
 > Or
 >
@@ -28,7 +28,7 @@ This project can be used directly from the browser using github/gitpod integrati
 
 ### Want to see complex example models visualized in ALFA?
 
-See https://alfa-demo.github.io/imported-schema-docs
+See [https://alfa-demo.github.io/imported-schema-docs](https://schemarise.github.io/alfa-sample-models-doc/)
 
 
 # Quick Tour
