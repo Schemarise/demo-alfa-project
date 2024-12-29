@@ -28,7 +28,7 @@ This project can be used directly from the browser using github/gitpod integrati
 
 ### Want to see complex example models visualized in ALFA?
 
-See [https://alfa-demo.github.io/imported-schema-docs](https://schemarise.github.io/alfa-sample-models-doc/)
+See [https://schemarise.github.io/alfa-sample-models-doc](https://schemarise.github.io/alfa-sample-models-doc/)
 
 
 # Quick Tour
