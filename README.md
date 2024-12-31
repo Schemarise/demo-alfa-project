@@ -6,7 +6,7 @@
 
 # ALFA Sample Project
 
-This Repository contains an example ALFA project showcasing some ALFA data modelling features - [entity](https://alfa-lang.io/lang/constructs/entity.html), [trait](https://alfa-lang.io/lang/constructs/trait.html), [service](https://alfa-lang.io/lang/constructs/service.html), [library](https://alfa-lang.io/lang/expressions/libary.html), [testcase](https://alfa-lang.io/labs/langtesting.html) definitions. 
+This Repository contains an example ALFA project showcasing some ALFA data modelling features - [entity](https://alfa-lang.io/lang/constructs/entity.html), [trait](https://alfa-lang.io/lang/constructs/trait.html), [service](https://alfa-lang.io/lang/constructs/service.html), [library](https://alfa-lang.io/lang/expressions/library.html), [testcase](https://alfa-lang.io/labs/langtesting.html) definitions. 
 
 It demonstrates features of that can be used to clearly capture data models, APIs, validations, calculation rules and testcases. For more information see [www.schemarise.com/products](http://www.schemarise.com/products) or the ALFA [Language Guide](https://alfa-lang.io/lang/guide.html). Alongside the model, 
 there are few sample Java and Python projects showing how the models can be used in various usecases and technologies.
