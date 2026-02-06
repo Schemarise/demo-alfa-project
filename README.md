@@ -56,10 +56,10 @@ See [https://schemarise.github.io/alfa-sample-models-doc](https://schemarise.git
 <img src="resources/transform.png" alt="ALFA DOCS" width="800"/>
 
 ## Data Quality Report produced from DQ Validation
-[Sample DQ Report](/resources/DQ-Report.html)
+[Sample DQ Report](https://alfa-lang.io/samples/DQ-Report.html)
 
 ## Model versions upgrade changes report
-[Sample Change Report](/resources/report-v2-v3.html)
+[Sample Change Report](https://alfa-lang.io/samples/rel/report-v2-v3.html)
 
 
 ## Code Examples
