@@ -39,7 +39,7 @@ See [https://schemarise.github.io/alfa-sample-models-doc](https://schemarise.git
 * The model files are actively validated. For example try changing `string` to `stringx` or `Person` to `Personx`.
 * Navigate around the model by pressing Control (or Command on Mac) and clicking a user-defined-type, such as `Person`.
 
-<img src="images/ide.png" alt="ALFA IDE" width="800"/>
+<img src="resources/ide.png" alt="ALFA IDE" width="800"/>
 
 ## Model live-documentation
 
@@ -49,11 +49,17 @@ See [https://schemarise.github.io/alfa-sample-models-doc](https://schemarise.git
 * Changes to the ALFA files are reflected in HTML when the browser page is refreshed.
 * **View a live ALFA Documentation site** [https://alfa-demo.github.io/position-model-docs/index.html](https://alfa-demo.github.io/position-model-docs/index.html)
 
-<img src="images/ide-docs.png" alt="ALFA DOCS" width="800"/>
+<img src="resources/ide-docs.png" alt="ALFA DOCS" width="800"/>
 
 * Transform definition rendered as part of ALFA Documentation showing source to target field paths.
 
-<img src="images/transform.png" alt="ALFA DOCS" width="800"/>
+<img src="resources/transform.png" alt="ALFA DOCS" width="800"/>
+
+## Data Quality Report produced from DQ Validation
+[Sample DQ Report](/resources/DQ-Report.html)
+
+## Model versions upgrade changes report
+[Sample Change Report](/resources/report-v2-v3.html)
 
 
 ## Code Examples
