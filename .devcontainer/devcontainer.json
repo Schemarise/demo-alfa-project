@@ -1,12 +1,6 @@
 {
   "image": "mcr.microsoft.com/devcontainers/universal:5",
-
-  "features": {
-    "ghcr.io/devcontainers/features/java": {
-      "version": "21"
-    }
-  },
-
+  
   "customizations": {
     "vscode": {
       "extensions": [
@@ -22,5 +16,6 @@
     "PATH": "${containerEnv:PATH}:/home/codespace/.alfa/bin"
   },
   "onCreateCommand": "${containerWorkspaceFolder}/.alfa/oncreate.sh",
-  "postCreateCommand": "sdk default java 21.0.9-ms && sdk use java 21.0.9-ms && cp ${containerWorkspaceFolder}/.alfa/alfa-license.txt /home/codespace/.alfa/"
+  "postCreateCommand": "cp ${containerWorkspaceFolder}/.alfa/alfa-license.txt /home/codespace/.alfa/",
+  "postStartCommand": "echo sdk default java 21.0.9-ms >> ~/.bashrc"
 }
