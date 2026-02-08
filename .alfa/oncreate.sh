@@ -6,24 +6,25 @@ sudo apt update
 sudo apt-get install graphviz -y
 
 
-mkdir -p $HOME/.vscode-remote/extensions/ 
+mkdir -p /home/codespace/.vscode-remote/extensions/ 
 
 # ALFA IDE Setup
-curl -L --http1.1 http://alfa-lang.io/downloads/alfa-3.4.0.vsix --output /tmp/alfa-3.4.0.vsix > /dev/null
-cd /tmp
+mkdir /tmp/alfa
+curl -L --http1.1 http://alfa-lang.io/downloads/alfa-3.4.0.vsix --output /tmp/alfa/alfa-3.4.0.vsix > /dev/null
+cd /tmp/alfa
 unzip -d p1 alfa-3.4.0.vsix
-mv p1/extension $HOME/.vscode-remote/extensions/schemarise.alfa-3.4.0
+mv p1/extension /home/codespace/.vscode-remote/extensions/schemarise.alfa-3.4.0
 
 # ALFA Assistant Setup
-curl -L --http1.1 http://alfa-lang.io/downloads/alfa-assistant-3.4.0.vsix --output /tmp/alfa-assistant-3.4.0.vsix > /dev/null 
-cd /tmp
+curl -L --http1.1 http://alfa-lang.io/downloads/alfa-assistant-3.4.0.vsix --output /tmp/alfa/alfa-assistant-3.4.0.vsix > /dev/null 
+cd /tmp/alfa
 unzip -d p2 alfa-assistant-3.4.0.vsix
-mv p2/extension $HOME/.vscode-remote/extensions/schemarise.alfa-assistant-3.4.0
+mv p2/extension /home/codespace/.vscode-remote/extensions/schemarise.alfa-assistant-3.4.0
 
 # ALFA CLI Setup
-mkdir -p $HOME/.alfa
-curl -L --http1.1 http://alfa-lang.io/downloads/AlfaPackage-3.4.0.zip --output $HOME/.alfa/AlfaPackage-3.4.0.zip > /dev/null 
-cd $HOME/.alfa 
+mkdir -p /home/codespace/.alfa
+curl -L --http1.1 http://alfa-lang.io/downloads/AlfaPackage-3.4.0.zip --output /home/codespace/.alfa/AlfaPackage-3.4.0.zip > /dev/null 
+cd /home/codespace/.alfa 
 unzip AlfaPackage-3.4.0.zip
 rm -rf samples
 

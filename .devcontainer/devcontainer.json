@@ -1,0 +1,20 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/universal:5",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "schemarise.alfa"
+      ]
+    }
+  },
+  "containerEnv": {
+    "ALFA_HOME": "/home/codespace/.alfa",
+    "ALFA_TOOLS_PORT": "8000"
+  },
+  "remoteEnv": {
+    "PATH": "${containerEnv:PATH}:/home/codespace/.alfa/bin"
+  },
+  "onCreateCommand": "${containerWorkspaceFolder}/.alfa/oncreate.sh",
+  "postCreateCommand": "cp ${containerWorkspaceFolder}/.alfa/alfa-license.txt /home/codespace/.alfa/"
+}

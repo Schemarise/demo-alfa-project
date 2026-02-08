@@ -12,15 +12,10 @@ It demonstrates features of that can be used to clearly capture data models, API
 there are few sample Java and Python projects showing how the models can be used in various usecases and technologies.
 
 
-This project can be used directly from the browser using github/gitpod integration with ALFA toolset. You can login to gitpod using your github/bitbucket/gitlab account.
+### Working with ALFA
 
+This project can be used directly from the browser using Github/Gitpod integration with ALFA toolset. You can login to Gitpod using your github/bitbucket/gitlab account.
 
-> **Click the button below to open the project in your browser.**
-> 
-> <a href="https://gitpod.io/#https://github.com/Schemarise/alfa-sample-project" target="_blank"><img src="https://gitpod.io/button/open-in-gitpod.svg"/></a>
-> 
-> Or
->
 > Open this project directly in **Github Codespaces**.
 >
 > **Tip:** Have a look at the *Quick Tour* below first, then right-click on the Gitpod button and open in new tab/window or in GitHub Codespaces.
@@ -69,6 +64,6 @@ which will then be used as a dependency from Java or Python projects. However fo
 these are conbined in sub-directories within this project.
 
 1. [Java/Scala samples](projects/java/README.md) - 4 sample projects showing ALFA being used in different usecases.
-2. [Python samples](projects/python/README.md) - Coming soon
+2. [Python samples](projects/python/README.md) - Create random data and round-trip with JSON, export to Pandas.
 
 For any questions, please email `info@schemarise.com`.
