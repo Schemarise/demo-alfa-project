@@ -1,6 +1,12 @@
 {
   "image": "mcr.microsoft.com/devcontainers/universal:5",
 
+  "features": {
+    "ghcr.io/devcontainers/features/java": {
+      "version": "21"
+    }
+  },
+
   "customizations": {
     "vscode": {
       "extensions": [
