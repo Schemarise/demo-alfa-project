@@ -1,17 +1,21 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "image": "mcr.microsoft.com/devcontainers/universal:5",
   
-  "extensions": [
-	"schemarise.alfa"
-],
-  "containerEnv" : {
-    "ALFA_HOME" : "/home/codespace/.alfa",
-    "ALFA_TOOLS_PORT" : "8000"
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "schemarise.alfa"
+      ]
+    }
   },
-  "remoteEnv" : {
-        "PATH": "${containerEnv:PATH}:/home/codespace/.alfa/bin" 
+  "containerEnv": {
+    "ALFA_HOME": "/home/codespace/.alfa",
+    "ALFA_TOOLS_PORT": "8000"
+  },
+  "remoteEnv": {
+    "PATH": "${containerEnv:PATH}:/home/codespace/.alfa/bin"
   },
   "onCreateCommand": "${containerWorkspaceFolder}/.alfa/oncreate.sh",
   "postCreateCommand": "cp ${containerWorkspaceFolder}/.alfa/alfa-license.txt /home/codespace/.alfa/",
-  "postStartCommand": "echo sdk default java 17.0.13-ms >> ~/.bashrc"
+  "postStartCommand": "echo sdk default java 21.0.9-ms >> ~/.bashrc"
 }

@@ -1,8 +1,7 @@
 # THIS LICENSE IS STRICTLY FOR EVALUATION PURPOSES.
 
 licensee=ALFA Demo License
-expiry-date=2025-06-01
-license-code=Izs6KAYlPz59fXqfULsmU2q7p8U1hkr8e4h/DcbAUgnbLTJvJpTdr1ev3xA58fOmMfq/h8QwF6R9H5HJLe1bYA==
+expiry-date=2026-05-01
+license-code=e+6hVljqFyNy7+ZdWbUg7V03ypG8B/dQjGwVUsh9XObd28kkhzFO1nxp8Te3KKs7JQmpLFZlX9WcY/CL2xb3Rw==
 type=Evaluation
-license-namespaces=demo
-
+license-namespaces=demo,acme

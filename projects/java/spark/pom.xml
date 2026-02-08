@@ -12,10 +12,10 @@
     </parent>
 
     <properties>
-        <scala.version>2.12.17</scala.version>
+        <scala.version>2.12.18</scala.version>
         <scala.compat.version>2.12</scala.compat.version>
-        <scala-maven-plugin.version>4.7.1</scala-maven-plugin.version>
-        <spark.version>3.4.1</spark.version>
+        <scala-maven-plugin.version>4.9.9</scala-maven-plugin.version>
+        <spark.version>3.5.3</spark.version>
         <jackson.version>2.15.0</jackson.version>
     </properties>
     
