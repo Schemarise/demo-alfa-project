@@ -22,5 +22,5 @@
     "PATH": "${containerEnv:PATH}:/home/codespace/.alfa/bin"
   },
   "onCreateCommand": "${containerWorkspaceFolder}/.alfa/oncreate.sh",
-  "postCreateCommand": "cp ${containerWorkspaceFolder}/.alfa/alfa-license.txt /home/codespace/.alfa/"
+  "postCreateCommand": "sdk default java 21.0.9-ms && sdk use java 21.0.9-ms && cp ${containerWorkspaceFolder}/.alfa/alfa-license.txt /home/codespace/.alfa/"
 }
