@@ -4,5 +4,6 @@
         "resources": true
     },
     "workbench.startupEditor": "readme",
-    "window.menuBarVisibility": "classic"
+    "window.menuBarVisibility": "classic",
+    "workbench.colorTheme": "Dark+ (default dark)"
 }
